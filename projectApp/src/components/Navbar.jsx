@@ -5,7 +5,7 @@ import { AuthContext } from '../context/auth.context';
 
 function Navbar() {
   const { theme, toggleTheme } = useContext(ThemeContext);
-  const { isLoggedIn } = useContext(AuthContext);
+  const { isLoggedIn, logoutUser } = useContext(AuthContext);
   // console.log(context);
   return (
     <nav className={`Navbar ${theme}`}>
@@ -21,6 +21,8 @@ function Navbar() {
           <Link to='/projects/create'>
             <button>Create Project</button>
           </Link>
+
+          <button onClick={logoutUser}>Logout</button>
         </>
       )}
 

@@ -1,7 +1,11 @@
+import { useContext } from 'react';
+import { AuthContext } from '../context/auth.context';
+
 function Home() {
+  const { user } = useContext(AuthContext);
   return (
     <div>
-      <h1>Welcome to Project Manager</h1>
+      <h1>{user && user.name + ','} Welcome to Project Manager</h1>
     </div>
   );
 }
